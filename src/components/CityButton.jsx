@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {useEffect, useState} from "react";
 
-function CityButton({coordinates, image, name, id}) {
+function CityButton({coordinates, image, name, id, cities}) {
 
     const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ function CityButton({coordinates, image, name, id}) {
     }, [])
 
     function navigateToCityAttractions(){
-        navigate(`/city/${id}`);
+        navigate(`/city/${id}`, {state: cities});
     }
 
     return (

@@ -3,11 +3,15 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import CityButton from "./CityButton";
 import TableOfContents from "./TableOfContents";
+import {useNavigate} from "react-router-dom";
 
 function Cities() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [cities, setCities] = useState([]);
+
+    const navigate = useNavigate();
+    const type = "city";
 
     useEffect(() => {
         getCities()
@@ -21,16 +25,20 @@ function Cities() {
             })
     }
 
+    function navigateToAdd(){
+        navigate(`/add/${type}`, {state: cities});
+    }
+
     if (!isLoading) {
         return (
             <div>
                 <TableOfContents />
-                <div className="cities_add_city_container">+</div>
+                <div className="cities_add_city_container" onClick={() => navigateToAdd()}>+</div>
                 <main>
                 {cities.map((city, index) => {
                     return (
                         <div id={city.name} key={index}><CityButton coordinates={city.coordinates} image={city.image}
-                                                        name={city.name} id={city._id}/></div>)
+                                                        name={city.name} id={city._id} cities={cities}/></div>)
                 })}
                 </main>
             </div>

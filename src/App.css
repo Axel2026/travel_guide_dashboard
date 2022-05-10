@@ -63,17 +63,51 @@
   background-color: #ff8c00;
   width: 60%;
   float: right;
-  margin-bottom: 20px;
   padding: 20px;
   text-align: center;
   border-radius: 5px;
-  margin-right: 8%;
+  margin: 0 130px 0 30%;
   cursor: pointer;
   font-family: 'helvetica-rounded-bold', serif;
+  position: fixed;
+  opacity: 0.9;
 }
 
 .cities_add_city_container:hover{
-  background-color: lightgray;
+  opacity: 0.7;
+}
+
+#add_city_button{
+  float: right;
+  margin-top: 30px;
+  margin-right: 30px;
+  font-family: 'Helvetica', serif;
+  width: 100px;
+  height: 50px;
+  background-color: #485683;
+  font-weight: bold;
+}
+
+#add_city_button:hover{
+  opacity: 0.8;
+}
+
+.attractions_add_attraction_container{
+  background-color: #ff8c00;
+  width: 60%;
+  float: right;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 130px 0 30%;
+  cursor: pointer;
+  font-family: 'helvetica-rounded-bold', serif;
+  position: fixed;
+  opacity: 0.9;
+}
+
+.attractions_add_attraction_container:hover{
+  opacity: 0.7;
 }
 
 .attraction_option_button_container{
@@ -123,6 +157,22 @@
   border-bottom-right-radius: 10px;
 }
 
+#add_attraction_button{
+  float: right;
+  margin-top: 30px;
+  margin-right: 30px;
+  font-family: 'Helvetica', serif;
+  width: 100px;
+  height: 50px;
+  background-color: #485683;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#add_attraction_button:hover{
+  opacity: 0.8;
+}
+
 .table_of_contents_container{
   float: left;
   height: 80vh;
@@ -131,6 +181,7 @@
   background-color: midnightblue;
   border-radius: 5px;
   position: fixed;
+  text-decoration: none;
 }
 
 .table_of_contents_item{
@@ -139,12 +190,77 @@
   border-bottom-style: solid;
   text-align: center;
   position: fixed;
+  text-decoration: none;
+}
+
+.table_of_contents_link{
+  text-decoration: none;
+  font-family: 'Helvetica', serif;
+}
+
+#add_new_tab_list{
+  font-family: 'Helvetica', serif;
+  background-color: #485683;
+  border-radius: 6px;
+}
+
+#add_new_tab_list:hover{
+  opacity: 0.8;
+}
+
+.add_new_tab_container{
+  margin: 30px 300px 0 300px;
+  font-family: 'Helvetica', serif;
+  min-width: 300px;
+}
+
+.add_city_container{
+  padding: 20px 50px 0 50px;
+  min-width: 300px;
+}
+
+.add_city_title_text{
+  font-weight: bold;
+  font-family: 'Helvetica', serif;
+  margin: 15px 0 5px 0;
+}
+
+.add_attraction_title_text{
+  font-weight: bold;
+  font-family: 'Helvetica', serif;
+  margin: 15px 0 5px 0;
+}
+
+.add_attraction_container{
+  padding: 20px 50px 0 50px;
+  min-width: 300px;
+}
+
+#add_city_coordinates_text{
+  margin-bottom: 10px;
+}
+
+#add_attraction_coordinates_text{
+  margin-bottom: 10px;
+}
+
+#add_attraction_zip_text{
+  margin-bottom: 10px;
+}
+
+#add_attraction_phone_text{
+  margin-bottom: 10px;
+}
+
+#add_attraction_description_text{
+  margin-bottom: 10px;
 }
 
 main {
   padding: 16px;
   border-radius: 8px;
   margin-left: 22%;
+  margin-top: 30px;
 }
 
 nav {
@@ -175,12 +291,14 @@ a {
 
 div.active > a {
   color: white;
+  text-decoration: none;
   font-family: 'helvetica-rounded-bold', serif;
   font-size: 25px;
 }
 
 div > a:hover {
   color: white;
+  text-decoration: none;
   font-family: 'helvetica-rounded-bold', serif;
   font-size: 25px;
 }

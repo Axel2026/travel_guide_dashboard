@@ -87,6 +87,7 @@ const Headings = ({headings, activeId, setActiveId}) => {
                      }}>
                     <a
                         href={`#${heading.id}`}
+                        className="table_of_contents_link"
                     >
                         {heading.id}
                     </a>

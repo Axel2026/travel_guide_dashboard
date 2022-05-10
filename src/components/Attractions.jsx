@@ -1,5 +1,5 @@
 import * as React from "react"
-import {useNavigate, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import TableOfContents from "./TableOfContents";
@@ -9,7 +9,11 @@ function Attractions() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [attractions, setAttractions] = useState([]);
+
     let {id} = useParams();
+    const navigate = useNavigate();
+    const cities = useLocation().state;
+    const type = "attraction";
 
     useEffect(() => {
         getAttractions()
@@ -23,11 +27,15 @@ function Attractions() {
             })
     }
 
+    function navigateToAdd(){
+        navigate(`/add/${type}`, {state: cities});
+    }
+
     if (!isLoading) {
         return (
             <div>
                 <TableOfContents/>
-                <div className="cities_add_city_container">+</div>
+                <div className="attractions_add_attraction_container" onClick={() => navigateToAdd()}>+</div>
                 <main>
                     {attractions.map((attraction, index) => {
                         return (
